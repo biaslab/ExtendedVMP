@@ -1,10 +1,12 @@
-using ForneyLab, Plots, LinearAlgebra, DelimitedFiles, DataFrames
+using ForneyLab, LinearAlgebra, DelimitedFiles, DataFrames
 
 #Generate data
 using Random
 import Distributions: pdf, MvNormal, rand
 
 Random.seed!(1) # Set random seed
+
+const DUMP_VALUES = true
 
 T = 40 # Number of timepoints
 
@@ -115,3 +117,9 @@ for i = 1:n_its
 end
 
 println(total_time)
+println("FE: $(F_mf[end])")
+
+if DUMP_VALUES
+    writedlm("./values/FLFETime.txt", F_x)
+    writedlm("./values/FLFreeEnergy.txt", F_mf)
+end

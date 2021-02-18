@@ -1,8 +1,10 @@
-using Turing, Plots, LinearAlgebra, Distributions, AdvancedVI, DelimitedFiles, DataFrames
+using Turing, LinearAlgebra, Distributions, AdvancedVI, DelimitedFiles, DataFrames
 
 using Logging
 Logging.disable_logging(Logging.Error)
 setprogress!(false)
+
+const DUMP_VALUES = true
 
 #Generate data
 using Random
@@ -80,3 +82,9 @@ for i=2:n_its
 end
 
 println(total_time)
+println("FE: $(F_mf[end])")
+
+if DUMP_VALUES
+    writedlm("./values/ADVIFETime.txt", F_x)
+    writedlm("./values/ADVIFreeEnergy.txt", F_mf)
+end

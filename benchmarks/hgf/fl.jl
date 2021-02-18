@@ -1,5 +1,4 @@
 using ForneyLab, Random
-using Plots
 using DelimitedFiles, DataFrames
 Random.seed!(0);
 

@@ -1,4 +1,4 @@
-using Turing, Plots, LinearAlgebra, Distributions
+using Turing, LinearAlgebra, Distributions
 
 using Logging
 Logging.disable_logging(Logging.Error)

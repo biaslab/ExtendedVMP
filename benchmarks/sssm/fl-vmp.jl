@@ -1,4 +1,4 @@
-using ForneyLab, Plots, Random, DelimitedFiles, DataFrames
+using ForneyLab, Random, DelimitedFiles, DataFrames
 
 Random.seed!(0);
 #Generate data
@@ -104,3 +104,4 @@ for i = 1:n_its
 end
 
 println(total_time)
+println("FE: $(F_mf[end])")
