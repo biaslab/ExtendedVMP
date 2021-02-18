@@ -73,9 +73,10 @@ F_mf[1] = - AdvancedVI.elbo(advi, q, BLDS(y_hat), 1000);
 F_x[1] = total_time
 
 for i=2:n_its
-    # TODO: Fix iteration    
-    etime = @elapsed q = vi(BLDS(y_hat), advi, q);
+    etime = @elapsed global q = vi(BLDS(y_hat), advi, q);
     global total_time += etime
     F_mf[i] = - AdvancedVI.elbo(advi, q, BLDS(y_hat), 1000);
     F_x[i] = total_time
 end
+
+println(total_time)

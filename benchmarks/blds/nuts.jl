@@ -1,5 +1,9 @@
 using Turing, Plots, LinearAlgebra, Distributions
 
+using Logging
+Logging.disable_logging(Logging.Error)
+setprogress!(false)
+
 #Generate data
 using Random
 import Distributions: pdf, MvNormal, rand
@@ -57,4 +61,5 @@ end
     end
 end
 
-chain = sample(BLDS(y_hat), NUTS(100,0.65), 50)
+total_time = @elapsed chain = sample(BLDS(y_hat), NUTS(100,0.65), 50)
+println(total_time)
