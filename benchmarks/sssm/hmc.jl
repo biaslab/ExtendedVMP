@@ -43,5 +43,6 @@ end
     y[T] ~ Normal(x[T],sqrt(1))
 end
 
-gibbs = Gibbs(HMC(0.2,20,:x,:M),PG(50,:z))
-chain = sample(SSSM(y_data),gibbs,100)
+total_time = @elapsed gibbs = Gibbs(HMC(0.2,20,:x,:M),PG(50,:z))
+total_time += @elapsed chain = sample(SSSM(y_data),gibbs,100)
+println(total_time)
