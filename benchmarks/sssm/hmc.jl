@@ -1,5 +1,9 @@
 using Turing, Plots, Random, DelimitedFiles, DataFrames
 
+using Logging
+Logging.disable_logging(Logging.Error)
+setprogress!(false)
+
 Random.seed!(0);
 #Generate data
 T = 120

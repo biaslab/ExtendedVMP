@@ -1,5 +1,9 @@
 using Turing, Random, AdvancedVI, DelimitedFiles, DataFrames
-using Plots
+
+using Logging
+Logging.disable_logging(Logging.Error)
+setprogress!(false)
+
 Random.seed!(0);
 
 #Generate data

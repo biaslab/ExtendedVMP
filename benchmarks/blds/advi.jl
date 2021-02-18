@@ -1,5 +1,9 @@
 using Turing, Plots, LinearAlgebra, Distributions, AdvancedVI, DelimitedFiles, DataFrames
 
+using Logging
+Logging.disable_logging(Logging.Error)
+setprogress!(false)
+
 #Generate data
 using Random
 import Distributions: pdf, MvNormal, rand
