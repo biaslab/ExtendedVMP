@@ -4,7 +4,7 @@ using Logging
 Logging.disable_logging(Logging.Error)
 setprogress!(false)
 
-const DUMP_VALUES = true
+const DUMP_VALUES = false
 
 #Generate data
 using Random

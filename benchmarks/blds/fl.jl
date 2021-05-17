@@ -6,7 +6,7 @@ import Distributions: pdf, MvNormal, rand
 
 Random.seed!(1) # Set random seed
 
-const DUMP_VALUES = true
+const DUMP_VALUES = false
 
 T = 40 # Number of timepoints
 
